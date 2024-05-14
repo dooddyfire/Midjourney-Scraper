@@ -18,12 +18,14 @@ import pandas as pd
 url = input("Enter midjourney showcase url : ")
 
 filename = input("Enter your filename : ")
-total = int(input("Enter your total image : ")) 
+total = int(input("Enter your total image : (0 is scrape all page)")) 
 
 driver = Driver(uc=True)
 
 driver.get(url)
-time.sleep(3)
+
+input("Please Login and Press Enter : ")
+#time.sleep(3)
 
 lis = [ i.get_attribute('href') for i in driver.find_elements(By.CSS_SELECTOR,'a.bg-cover')]
 
@@ -53,7 +55,8 @@ for item in lis:
     desc_lis.append(desc)
     print(desc)
 
-    c = c + 1
+    if c == 0:
+        c = c + 1
 
 
 df = pd.DataFrame()
