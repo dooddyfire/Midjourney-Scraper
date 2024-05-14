@@ -1,0 +1,4 @@
+seleniumbase
+webdriver_manager
+selenium
+beautifulsoup4
