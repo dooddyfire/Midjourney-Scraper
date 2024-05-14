@@ -44,7 +44,8 @@ for item in lis:
     link_lis.append(item)
 
     driver.get(item)
-    time.sleep(3)
+    # ตั้งเวลา delay รอโหลดรูปภาพ
+    time.sleep(5)
 
     # img = driver.find_element(By.CSS_SELECTOR, "img.w-full").get_attribute('src')
     # img_lis.append(img)
