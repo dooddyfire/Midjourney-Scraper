@@ -64,7 +64,6 @@ for item in lis:
 
 df = pd.DataFrame()
 df['Link'] = link_lis 
-df['Image'] = img_lis 
 df['Description'] = desc_lis 
 
 df.to_excel(f"{filename}.xlsx")
