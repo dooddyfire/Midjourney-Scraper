@@ -46,14 +46,17 @@ for item in lis:
     driver.get(item)
     time.sleep(3)
 
-    img = driver.find_element(By.CSS_SELECTOR, "img.w-full").get_attribute('src')
-    img_lis.append(img)
-    print(img)
+    # img = driver.find_element(By.CSS_SELECTOR, "img.w-full").get_attribute('src')
+    # img_lis.append(img)
+    # print(img)
 
-
-    desc = driver.find_element(By.CSS_SELECTOR,'#lightboxPrompt').find_element(By.CSS_SELECTOR,'p').text 
-    desc_lis.append(desc)
-    print(desc)
+    try:
+        desc = driver.find_element(By.CSS_SELECTOR,'#lightboxPrompt').find_element(By.CSS_SELECTOR,'p').text 
+        desc_lis.append(desc)
+        print(desc)
+    except: 
+        print("ไม่มี")
+        desc_lis.append("ไม่มี")
 
     if c == 0:
         c = c + 1
