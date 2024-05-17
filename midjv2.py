@@ -30,7 +30,10 @@ input("Please Login and Press Enter : ")
 #time.sleep(3)
 
 # fix 17/5/2567
-lis = [ i.find_element(By.CSS_SELECTOR,'a.bg-cover').get_attribute('href') for i in driver.find_elements(By.CSS_SELECTOR,'div.absolute[draggable="false"]')]
+
+# .find_element(By.CSS_SELECTOR,'a.bg-cover').get_attribute('href')
+
+lis = [ i.get_attribute('href') for i in driver.find_elements(By.CSS_SELECTOR,'a.bg-cover')]
 
 for k in lis: 
     print(k)
